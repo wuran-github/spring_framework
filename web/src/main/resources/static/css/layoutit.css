@@ -1,0 +1,104 @@
+﻿/* user */
+.sidebar-nav ul{
+	list-style: none;
+	padding-left: 0px;
+}
+.sidebar-nav li{
+	list-style: none;
+	padding-left: 10px;
+}
+.sidebar-nav a{
+	display: block;
+	width: 100%;
+	text-decoration: none;
+	color: inherit;
+	padding: 10px 15px;
+	font-size: 14px;
+}
+.L1{
+	font-weight: bold;
+	/* background-color: #1E83EB; */
+
+}
+.L2{
+	font-weight: normal;
+	/* background-color: #418ACF; */
+
+}
+.L3{
+	/* background-color: #38A4E5; */
+
+}
+.L4{
+	/* background-color: #72C1E0; */
+
+
+}
+
+body {
+	/* padding-top:50px; */
+	/* padding-bottom: 40px; */
+	/* margin-left:200px; */
+	-webkit-transition: margin 500ms ease;
+	-moz-transition: margin 500ms ease;
+	-ms-transition: margin 500ms ease;
+	-o-transition: margin 500ms ease;
+	transition: margin 500ms ease;
+}
+@media (max-width: 980px) {
+	/* Enable use of floated navbar text */
+	.navbar-text.pull-right {
+		float: none;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+}
+@media (max-width: 979px) {
+	.navbar-fixed-top { position:fixed; }
+}
+
+
+
+/* .container { width:auto; margin:0 0px;} */
+.sidebar-nav {
+	position:fixed;
+	width:180px;
+	left:0px;
+	bottom:0;
+	top:32px;
+	background:#F4F4F4;
+	/* color: #777; */
+	/* padding: 10px;  */
+	z-index:10;
+	-webkit-transition: all 500ms ease;
+	-moz-transition: all 500ms ease;
+	-ms-transition: all 500ms ease;
+	-o-transition: all 500ms ease;
+	transition: all 500ms ease;
+}
+.sidebar-nav .nav-header { cursor:pointer; font-size:14px; color:#fff; text-shadow:0 1px 0 rgba(0, 0, 0, 0.3); text-transform:uppercase; font-weight:bold;}
+.sidebar-nav .nav-header span.label { font-size:10px; /*padding-bottom:0;*/ position:relative; top:-1px; }
+.sidebar-nav .nav-header i.glyphicon-question-sign { color:#000; text-shadow:0 1px 0 #ddd;}
+.sidebar-nav .nav-header .popover {color:#999; text-shadow:none;}
+
+.popover-info {position:relative;}
+.popover-info .popover {display:none; top: -12.5px; left:15px; }
+.popover-info:hover .popover {display:block; opacity:1; width:400px;}
+.popover-info:hover .popover .arrow {top:23px;}
+
+.sidebar-nav .accordion-group { border:none; }
+.sidebar-nav li { line-height:28px; margin-bottom:3px; }
+.sidebar-nav li .lyrow { margin-bottom:5px;}
+.sidebar-nav .box { line-height:26px; width:160px; height:26px; }
+.sidebar-nav .preview { display: block; color:#666; font-size:12px; line-height:26px;}
+.sidebar-nav .preview input { width:105px; padding:0 10px; background:#bbb; font-size:10px; color:#999; line-height:20px; height:20px; position:relative; top:-1px; }
+.sidebar-nav .view { display: none; }
+.sidebar-nav .remove,
+.sidebar-nav .configuration { display: none; }
+
+.sidebar-nav .boxes { display:none;}
+
+.demo .preview { display: none; }
+.demo .box .view { display: block; padding-top:30px;}
+
+

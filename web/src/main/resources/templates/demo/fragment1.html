@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorate="shared/layout">
+<!--第二个属性标识这个页面被包装到shared/layout页面内-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--div的内容就会自动写到母版页内-->
+<div layout:fragment="content">
+    test
+</div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorate="shared/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div layout:fragment="content" >
+    <h1>ajax测试</h1>
+    <h1 th:each="s1 : ${b1.getSensor()}" th:text="${s1.getSensor_id()}"></h1>
+    <h1 th:each="s2 : ${b2.getSensor()}" th:text="${s2.getSensor_id()}"></h1>
+    <button onclick="single()">返回单个数据</button><br />
+    <button onclick="array()">返回多个数据</button><br />
+    <script>
+
+        function single(){
+            $.ajax({
+                type: 'get',
+                url: "/api/single",
+                async: true,
+                data:"",
+                datatype: "json",
+                success:function(result){
+                    console.log(result);
+                },
+                error:function(result){
+                }
+
+            });
+        }
+        function array(){
+            $.ajax({
+                type: 'get',
+                url: "/api/array",
+                async: true,
+                data:"",
+                datatype: "json",
+                success:function(result){
+                    console.log(result);
+                },
+                error:function(result){
+                }
+
+            });
+        }
+    </script>
+</div>
+
+</body>
+</html>

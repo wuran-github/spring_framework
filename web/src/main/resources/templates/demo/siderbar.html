@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav th:fragment="siderbar" class="sidebar-nav" style="top:50px">
+    <ul id="nav-one" class="L1" th:if="${session.nav!=null}">
+
+        <li th:each="one : ${session.nav.urls}">
+            <a data-toggle="collapse" data-parent="#nav-one" th:text="${one.text}" th:href="'#'+${one.path}">
+                一级菜单
+            </a>
+
+            <ul th:id="${one.path}" class="collapse L2" >
+                <li th:each="two : ${one.urls}">
+                    <a th:data-parent="'#'+${one.path}" th:text="${two.text}" data-toggle="collapse" th:href="'#'+${two.path}">
+                        二级菜单
+                    </a>
+                    <ul th:id="${two.path}" class="collapse L3">
+                        <li th:each="three:${two.urls}">
+                            <a th:text="${three.text}" th:href="${three.path}">三级菜单</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+    </ul>
+</nav>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Nav>
+    <Url text="系统管理" isLink="false" path="systemMenu">
+        <Url text="用户管理" isLink="false" path="userMenu">
+                <Url text="信息管理" isLink="false" path="informMenu" >
+                    <Url text="添加用户信息" isLink="true" path="/user/toAdd" />
+                    <Url text="删除用户信息" isLink="true" path="/user/allUser" />
+                    <Url text="修改用户信息" isLink="true" path="/user/allUser" />
+                    <Url text="查看用户信息" isLink="true" path="/user/toSearch" />
+                </Url>
+                <Url text="权限组管理" isLink="false" path="roleMenu" >
+                    <Url text="添加权限组" isLink="true" path="/role/toAddRole" />
+                    <Url text="删除权限组" isLink="true" path="/role/allRole" />
+                    <Url text="修改权限组" isLink="true" path="/role/allRole" />
+                    <Url text="查看权限组" isLink="true" path="/role/toSearchRole" />
+                </Url>
+                <Url text="权限管理" isLink="false" path="permissionMenu" >
+                    <Url text="添加权限" isLink="true" path="/permission/toAddPer" />
+                    <Url text="删除权限" isLink="true" path="/permission/allPer/1" />
+                    <Url text="修改权限" isLink="true" path="/permission/allPer/1" />
+                    <Url text="查看权限" isLink="true" path="/permission/toSearchPer" />
+                </Url>
+        </Url>
+
+        <Url text="阈值管理" isLink="false" path="thresholdMenu">
+            <Url text="修改阈值" isLink="true" path="/sensor/allThreshold/1" />
+            <Url text="查找阈值" isLink="true" path="/sensor/toSearchThreshold" />
+        </Url>
+
+        <Url text="报警管理" isLink="false" path="warn_recoreMenu" >
+            <Url text="未解除报警记录" isLink="true" path="/Warn_record/allWarn_records" />
+            <Url text="已解除报警记录" isLink="true" path="/Warn_record/relieveWarn_records" />
+        </Url>
+
+        <Url text="传感器管理" isLink="false" path="sensorMenu">
+            <Url text="展示传感器" isLink="true" path="/sensor/allSensors/1" />
+            <Url text="查找传感器" isLink="true" path="/sensor/toSearchSensor" />
+        </Url>
+
+        <Url text="桥梁管理" isLink="false" path="bridgeMenu">
+            <Url text="展示桥梁" isLink="true" path="/bridge/allBridges/1" />
+            <Url text="查找桥梁" isLink="true" path="/bridge/toSearchBridge" />
+        </Url>
+
+
+    </Url>
+    <Url text="数据监控" path="oneMenu">
+        <Url text="动态图形" path="SVGMenu">
+            <Url text="实时数据" isLink="true" path="/echarts/livedata" />
+            <Url text="历史数据" isLink="true" path="/echarts/historydata" />
+            <Url text="统计数据" isLink="true" path="/echarts/statistics" />
+            <Url text="历史报警" isLink="true" path="/echarts/warnrecords" />
+        </Url>
+        <Url text="数据列表" isLink="false" path="listMenu">
+            <Url text="实时数据列表" isLink="true" path="/real_time_datalist" />
+            <Url text="历史数据列表" isLink="true" path="/history_datalist/1" />
+            <Url text="历史警告信息" isLink="true" path="/history_warn_record/1" />
+            <Url text="数据统计列表" isLink="true" path="/statistic_datalist" />
+        </Url>
+
+    </Url>
+</Nav>
