@@ -11,7 +11,7 @@ public class WebApplication  {
 
     public static void main(String[] args) {
         SpringApplication.run(WebApplication.class, args);
-        WriteWarnRecord writeWarnRecord = SpringUtil.getBean(WriteWarnRecord.class);
+//        WriteWarnRecord writeWarnRecord = SpringUtil.getBean(WriteWarnRecord.class);
 //        Thread thread = new Thread(writeWarnRecord);
 //        thread.start();
 

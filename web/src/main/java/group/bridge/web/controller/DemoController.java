@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class DemoController extends BaseController{
     @Autowired
     PersonService personService;
-    @RequestMapping(value = {"/",""})
+    @RequestMapping(value = {"/","","index"})
     public String demo() {
         return "common/index";
     }
