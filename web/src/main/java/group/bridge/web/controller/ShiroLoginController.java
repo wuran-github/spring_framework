@@ -1,11 +1,14 @@
 package group.bridge.web.controller;
 
+import group.bridge.web.annotation.LoginLog;
 import group.bridge.web.shiro.token.UserToken;
 import group.bridge.web.util.SessionUtil;
+import group.bridge.web.util.ShiroUtil;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +28,7 @@ public class ShiroLoginController {
     public String login(){
         return "login/login";
     }
+    @LoginLog
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     public String login(String name, String password, boolean admin, HttpServletRequest request){
        /**
@@ -44,7 +48,9 @@ public class ShiroLoginController {
         //没有异常代表登录成功
         try {
             subject.login(token);
-
+            Session session = subject.getSession();
+            //session有直接gethost方法，但是暂时还没看到源码里是怎么获取host的
+            session.setAttribute("ip", ShiroUtil.getIpAddress(request));
         }
         //代表用户名不存在
         catch (UnknownAccountException ex){
