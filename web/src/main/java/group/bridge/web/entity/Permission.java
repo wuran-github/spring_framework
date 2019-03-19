@@ -1,5 +1,8 @@
 package group.bridge.web.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -23,6 +26,7 @@ public class Permission {
     @JoinTable(name = "frame_permission_role_mapping",
             joinColumns = {@JoinColumn(name = "permission_id", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id")})
+    @JsonIgnore
     Set<Role> roles = new HashSet<>(0);
 
     public Integer getId() {

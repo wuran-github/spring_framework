@@ -98,7 +98,7 @@ public class UserRealm extends AuthorizingRealm {
         ByteSource salt = ByteSource.Util.bytes(token.getUsername());
 
 
-        SimpleAuthenticationInfo info = new SimpleAuthenticationInfo("", credentials, salt, realmName);
+        SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(token.getUsername(), credentials, salt, realmName);
         return info;
     }
 
