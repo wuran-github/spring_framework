@@ -1,5 +1,8 @@
 package group.bridge.web.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.*;
 
@@ -26,6 +29,7 @@ public class User {
     @JoinTable(name = "frame_role_user_mapping",
             joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id")})
+    @JsonManagedReference
     Set<Role> roles = new HashSet<>(0);
 
 

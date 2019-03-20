@@ -1,4 +1,4 @@
-package group.bridge.web.entity;
+package group.bridge.web.logentity;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

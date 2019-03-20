@@ -23,3 +23,10 @@ spring:
     cache: false
     model: HTML5
     encoding: UTF-8
+
+# 日志配置
+#logging:
+#  file: demo.log
+#    max-size: 1KB
+#  level: info
+#  path: D:/logtest

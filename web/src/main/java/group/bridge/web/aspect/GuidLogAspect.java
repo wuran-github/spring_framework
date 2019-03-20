@@ -1,7 +1,7 @@
 package group.bridge.web.aspect;
 
 import group.bridge.web.annotation.GuidLog;
-import group.bridge.web.entity.SysLog;
+import group.bridge.web.logentity.SysLog;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -27,6 +27,7 @@ public class GuidLogAspect {
     //代表环绕通知
     @Around("logPointCut()")
     public Object around(ProceedingJoinPoint point)throws Throwable{
+        //执行方法，around可以控制方法的执行
         Object result = point.proceed();
         saveLog(point);
         return result;

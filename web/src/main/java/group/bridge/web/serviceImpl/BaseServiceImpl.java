@@ -47,7 +47,11 @@ public abstract class BaseServiceImpl<T,ID> implements BaseService<T,ID>, Initia
 
     @Override
     public void deleteById(ID id) {
-        repository.deleteById(id);
+
+            repository.deleteById(id);
+
+
+
     }
 
     @Override

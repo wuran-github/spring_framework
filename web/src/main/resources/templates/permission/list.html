@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorate="shared/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div layout:fragment="content">
+        <div id="app" class="container">
+            <table class="table">
+                <tr v-for="item in items">
+                </tr>
+            </table>
+        </div>
+        <script>
+            var app = new Vue({
+                el:"#app",
+                data:{
+
+                },
+                created:function () {
+                  $.ajax({
+                      type: 'post',
+                      url: "",
+                      async: true,
+                      data:"",
+                      datatype: "json",
+                      success:function(result){
+                      },
+                      error:function(result){
+                      }
+                  });
+                },
+            })
+        </script>
+    </div>
+</body>
+</html>

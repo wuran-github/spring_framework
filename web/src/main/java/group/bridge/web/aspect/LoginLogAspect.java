@@ -1,15 +1,12 @@
 package group.bridge.web.aspect;
 
-import group.bridge.web.annotation.GuidLog;
 import group.bridge.web.annotation.LoginLog;
-import group.bridge.web.entity.LoginLogEntity;
-import group.bridge.web.entity.SysLog;
+import group.bridge.web.logentity.LoginLogEntity;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
-import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
@@ -27,16 +24,17 @@ import java.util.Date;
 public class LoginLogAspect {
     @Pointcut("@annotation(group.bridge.web.annotation.LoginLog)")
     public void logPointCut(){}
-    //代表环绕通知
-    @AfterReturning("logPointCut()")
-    public Object around(ProceedingJoinPoint point)throws Throwable{
-        Object result = point.proceed();
-        saveLog(point);
-        return result;
+    //代表返回结果后通知
+    @AfterReturning(value = "logPointCut()",returning = "result")
+    public void afterRunning(JoinPoint point,Object result)throws Throwable{
+        Boolean successful = (Boolean)result;
+        if(successful) {
+            saveLog(point);
+        }
     }
 
 
-    private void saveLog(ProceedingJoinPoint joinPoint){
+    private void saveLog(JoinPoint joinPoint){
         MethodSignature signature = (MethodSignature)joinPoint.getSignature();
         //获取到method
         Method method = signature.getMethod();
